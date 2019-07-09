@@ -1,6 +1,7 @@
 const db = require("../data/dbConfig.js");
 
 module.exports = {
+  getAll,
   insert,
   remove
 };
@@ -11,6 +12,11 @@ async function insert(car) {
     .where({ id })
     .first();
 }
+
+function getAll() {
+  return db("cars");
+}
+
 function remove(id) {
   return db("cars")
     .where({ id })
