@@ -4,7 +4,7 @@ exports.up = function(knex) {
 
     tbl.string("make", 255).notNullable();
     tbl.string("model", 255).notNullable();
-    tbl.integer("year", 4).notNullable();
+    tbl.integer("year").notNullable();
   });
 };
 
