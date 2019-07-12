@@ -1,6 +1,6 @@
 const request = require("supertest");
 
-const server = require("../api/server.js");
+const carRouter = require("../cars/carsRouter.js");
 const db = require("../data/dbConfig.js");
 
 const Cars = require("./carsModel.js");
@@ -32,7 +32,9 @@ describe("POST cars", () => {
   });
 
   it("should post a new car with status code 201", async () => {
-    const res = await request(server).post("/games");
+    const res = await request(carRouter)
+      .post("/cars")
+      .send(testCar);
 
     expect(res.status).toBe(201);
   });
