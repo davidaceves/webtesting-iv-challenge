@@ -8,7 +8,7 @@ const Cars = require("../cars/carsModel.js");
 describe("GET /cars", () => {
   it("should return 200", () => {
     return request(server)
-      .get("/cars")
+      .get("/")
       .then(res => {
         expect(res.status).toBe(200);
       });

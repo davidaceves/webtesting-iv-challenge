@@ -8,7 +8,7 @@ const server = express();
 server.use(express.json());
 server.use("/api/cars", CarsRouter);
 
-server.get("/cars", (req, res) => {
+server.get("/", (req, res) => {
   Cars.getAll()
     .then(cars => {
       res.status(200).json(cars);

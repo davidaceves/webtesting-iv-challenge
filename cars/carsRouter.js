@@ -25,4 +25,14 @@ server.post("/post", async (req, res) => {
   }
 });
 
+server.delete("/:id", async (req, res) => {
+  try {
+    const car = await Cars.remove(req.params.id);
+
+    res.status(200).json(car);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = server;
