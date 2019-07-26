@@ -1,10 +1,12 @@
 const express = require("express");
 
 const Cars = require("../cars/carsModel.js");
+const CarsRouter = require("../cars/carsRouter.js");
 
 const server = express();
 
 server.use(express.json());
+server.use("/api/cars", CarsRouter);
 
 server.get("/cars", (req, res) => {
   Cars.getAll()

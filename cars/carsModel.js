@@ -7,7 +7,7 @@ module.exports = {
 };
 
 async function insert(car) {
-  const [id] = await db("cars").insert(car, "id");
+  const [id] = await db("cars").insert(car);
   return db("cars")
     .where({ id })
     .first();

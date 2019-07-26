@@ -33,7 +33,7 @@ describe("POST cars", () => {
 
   it("should post a new car with status code 201", async () => {
     const res = await request(carRouter)
-      .post("/cars")
+      .post("/post")
       .send(testCar);
 
     expect(res.status).toBe(201);

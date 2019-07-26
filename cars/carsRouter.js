@@ -6,17 +6,17 @@ const server = express();
 
 server.use(express.json());
 
-server.get("/cars", (res, res) => {
+server.get("/", (req, res) => {
   Cars.getAll()
     .then(cars => {
       res.status(200).json(cars);
     })
     .catch(err => {
       res.status(500).json(err);
-    })
-})
+    });
+});
 
-server.post("/cars", async (req, res) => {
+server.post("/post", async (req, res) => {
   try {
     const car = await Cars.insert(req.body);
     res.status(201).json(car);
